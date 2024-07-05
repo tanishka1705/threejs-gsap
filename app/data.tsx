@@ -3,6 +3,18 @@ export interface ButtonColor {
   background: string;
 }
 
+export interface ItemList {
+  bag: {
+    color: string;
+  };
+  strap: {
+    color: string;
+  };
+  metal: {
+    color: string;
+  };
+}
+
 export interface DataItem {
   id: number;
   heading: string;
@@ -12,9 +24,10 @@ export interface DataItem {
   background: string;
   headingColor: string;
   buttonColor: ButtonColor;
+  itemList: ItemList;
 }
 
-
+// inside itemList the object name is bag, strap, metal becuase in blender the name is bag,strap, metal
 export const data: DataItem[] = [
     {
       id: 1,
@@ -25,6 +38,17 @@ export const data: DataItem[] = [
       background: '#E5E5E5',
       headingColor: '#000',
       buttonColor: { text: '#000', background: '#D7B172' },
+      itemList:{
+        bag: {
+          color: '#E6D3C4'
+        },
+        strap: {
+          color: '#5E2B17',
+        },
+        metal: {
+          color: '#D7B172',
+        },
+      }
     },
     {
       id: 2,
@@ -36,6 +60,17 @@ export const data: DataItem[] = [
       background: '#79716C',
       headingColor: '#ffffff',
       buttonColor: { text: '#ffffff', background: '#774a37' },
+      itemList:{
+        bag: {
+          color: '#774a37',
+        },
+        strap: {
+          color: '#503830',
+        },
+        metal: {
+          color: '#d4c5b5',
+        },
+      }
     },
     {
       id: 3,
@@ -47,5 +82,16 @@ export const data: DataItem[] = [
       background: '#C1D6E3',
       headingColor: '#1F333E',
       buttonColor: { text: '#fff', background: '#2f7393' },
+      itemList:{
+        bag: {
+          color: '#2f7393',
+        },
+        strap: {
+          color: '#1d1b1b',
+        },
+        metal: {
+          color: '#F2F2F2',
+        },
+      }
     },
   ];

@@ -6,15 +6,18 @@ interface SwatchWrapperProps {
   activeData: DataItem;
   swatchData: DataItem[];
   handleSwatchClick: (item: DataItem) => void;
+  condition: boolean;
 }
 
 function SwatchWrapper({
   activeData,
   swatchData,
   handleSwatchClick,
+  condition,
 }: SwatchWrapperProps) {
  
   const handleSwatchClicked = (item: DataItem) => {
+    if(condition) return;
     handleSwatchClick(item);
   };
 

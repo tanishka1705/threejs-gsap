@@ -4,10 +4,18 @@ import React, { useEffect } from "react";
 
 interface ContentProps {
   activeData: DataItem;
+  condition: boolean;
+  setCondition: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Content({ activeData }: ContentProps) {
+function Content({ activeData, condition, setCondition }: ContentProps) {
+
   useEffect(() => {
+
+    if (condition) return;
+
+    setCondition(true);
+
     gsap.to(".button", {
       color: activeData.buttonColor.text,
       backgroundColor: activeData.buttonColor.background,
@@ -27,6 +35,10 @@ function Content({ activeData }: ContentProps) {
       duration: 1,
       stagger:{
         amount: 0.3
+      },
+
+      onComplete: () => {
+        setCondition(false)
       }
     });
 
