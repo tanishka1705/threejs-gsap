@@ -386,6 +386,7 @@ const Canvas: React.FC<CanvasProps> = ({
     );
 
     const bag = "bag.glb";
+    // const bag = "test.glb";
     const GLtfLoader = new GLTFLoader(managerRef.current).setDRACOLoader(
       DRACO_LOADER
     );
